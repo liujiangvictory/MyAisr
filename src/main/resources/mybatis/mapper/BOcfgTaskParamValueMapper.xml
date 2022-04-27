@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liuj.opencrm.lt.dao.BOcfgTaskParamValueMapper">
+  <resultMap id="BaseResultMap" type="com.liuj.opencrm.lt.bean.BOcfgTaskParamValue">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="cfg_task_id" jdbcType="INTEGER" property="cfg_task_id" />
+    <result column="param_id" jdbcType="INTEGER" property="param_id" />
+    <result column="param_value" jdbcType="VARCHAR" property="param_value" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, cfg_task_id, param_id, param_value, remarks
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cfg_task_param_value
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from cfg_task_param_value
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.liuj.opencrm.lt.bean.BOcfgTaskParamValue">
+    insert into cfg_task_param_value (id, cfg_task_id, param_id, 
+      param_value, remarks)
+    values (#{id,jdbcType=INTEGER}, #{cfg_task_id,jdbcType=INTEGER}, #{param_id,jdbcType=INTEGER}, 
+      #{param_value,jdbcType=VARCHAR}, #{remarks,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.liuj.opencrm.lt.bean.BOcfgTaskParamValue">
+    insert into cfg_task_param_value
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="cfg_task_id != null">
+        cfg_task_id,
+      </if>
+      <if test="param_id != null">
+        param_id,
+      </if>
+      <if test="param_value != null">
+        param_value,
+      </if>
+      <if test="remarks != null">
+        remarks,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="cfg_task_id != null">
+        #{cfg_task_id,jdbcType=INTEGER},
+      </if>
+      <if test="param_id != null">
+        #{param_id,jdbcType=INTEGER},
+      </if>
+      <if test="param_value != null">
+        #{param_value,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.liuj.opencrm.lt.bean.BOcfgTaskParamValue">
+    update cfg_task_param_value
+    <set>
+      <if test="cfg_task_id != null">
+        cfg_task_id = #{cfg_task_id,jdbcType=INTEGER},
+      </if>
+      <if test="param_id != null">
+        param_id = #{param_id,jdbcType=INTEGER},
+      </if>
+      <if test="param_value != null">
+        param_value = #{param_value,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.liuj.opencrm.lt.bean.BOcfgTaskParamValue">
+    update cfg_task_param_value
+    set cfg_task_id = #{cfg_task_id,jdbcType=INTEGER},
+      param_id = #{param_id,jdbcType=INTEGER},
+      param_value = #{param_value,jdbcType=VARCHAR},
+      remarks = #{remarks,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.liuj.opencrm.lt.bean.BOcfgTaskParamValue">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="cfg_task_id" jdbcType="INTEGER" property="cfg_task_id" />
+    <result column="param_id" jdbcType="INTEGER" property="param_id" />
+    <result column="param_value" jdbcType="VARCHAR" property="param_value" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, cfg_task_id, param_id, param_value, remarks
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cfg_task_param_value
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from cfg_task_param_value
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.liuj.opencrm.lt.bean.BOcfgTaskParamValue">
+    insert into cfg_task_param_value (id, cfg_task_id, param_id, 
+      param_value, remarks)
+    values (#{id,jdbcType=INTEGER}, #{cfg_task_id,jdbcType=INTEGER}, #{param_id,jdbcType=INTEGER}, 
+      #{param_value,jdbcType=VARCHAR}, #{remarks,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.liuj.opencrm.lt.bean.BOcfgTaskParamValue">
+    insert into cfg_task_param_value
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="cfg_task_id != null">
+        cfg_task_id,
+      </if>
+      <if test="param_id != null">
+        param_id,
+      </if>
+      <if test="param_value != null">
+        param_value,
+      </if>
+      <if test="remarks != null">
+        remarks,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="cfg_task_id != null">
+        #{cfg_task_id,jdbcType=INTEGER},
+      </if>
+      <if test="param_id != null">
+        #{param_id,jdbcType=INTEGER},
+      </if>
+      <if test="param_value != null">
+        #{param_value,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.liuj.opencrm.lt.bean.BOcfgTaskParamValue">
+    update cfg_task_param_value
+    <set>
+      <if test="cfg_task_id != null">
+        cfg_task_id = #{cfg_task_id,jdbcType=INTEGER},
+      </if>
+      <if test="param_id != null">
+        param_id = #{param_id,jdbcType=INTEGER},
+      </if>
+      <if test="param_value != null">
+        param_value = #{param_value,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.liuj.opencrm.lt.bean.BOcfgTaskParamValue">
+    update cfg_task_param_value
+    set cfg_task_id = #{cfg_task_id,jdbcType=INTEGER},
+      param_id = #{param_id,jdbcType=INTEGER},
+      param_value = #{param_value,jdbcType=VARCHAR},
+      remarks = #{remarks,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

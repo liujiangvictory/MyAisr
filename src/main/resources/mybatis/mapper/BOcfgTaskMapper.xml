@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liuj.opencrm.lt.dao.BOcfgTaskMapper">
+  <resultMap id="BaseResultMap" type="com.liuj.opencrm.lt.bean.BOcfgTask">
+  <id column="cfg_task_id" jdbcType="INTEGER" property="cfg_task_id" />
+  <result column="task_name" jdbcType="VARCHAR" property="task_name" />
+  <result column="cfg_task_type_code" jdbcType="VARCHAR" property="cfg_task_type_code" />
+  <result column="business_class" jdbcType="VARCHAR" property="business_class" />
+  <result column="task_method" jdbcType="CHAR" property="task_method" />
+  <result column="task_expr" jdbcType="VARCHAR" property="task_expr" />
+  <result column="sort_id" jdbcType="INTEGER" property="sort_id" />
+  <result column="staff_id" jdbcType="INTEGER" property="staff_id" />
+  <result column="create_date" jdbcType="DATE" property="create_date" />
+  <result column="state_date" jdbcType="DATE" property="state_date" />
+  <result column="state" jdbcType="CHAR" property="state" />
+  <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+</resultMap>
+<sql id="Base_Column_List">
+cfg_task_id, task_name, cfg_task_type_code, business_class, task_method, task_expr,
+    sort_id, staff_id, create_date, state_date, state, remarks
+</sql>
+<select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+select
+<include refid="Base_Column_List" />
+from cfg_task
+where cfg_task_id = #{cfg_task_id,jdbcType=INTEGER}
+</select>
+<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+delete from cfg_task
+where cfg_task_id = #{cfg_task_id,jdbcType=INTEGER}
+</delete>
+<insert id="insert" parameterType="com.liuj.opencrm.lt.bean.BOcfgTask">
+insert into cfg_task (cfg_task_id, task_name, cfg_task_type_code,
+                      business_class, task_method, task_expr,
+                      sort_id, staff_id, create_date,
+                      state_date, state, remarks
+)
+values (#{cfg_task_id,jdbcType=INTEGER}, #{task_name,jdbcType=VARCHAR}, #{cfg_task_type_code,jdbcType=VARCHAR},
+        #{business_class,jdbcType=VARCHAR}, #{task_method,jdbcType=CHAR}, #{task_expr,jdbcType=VARCHAR},
+        #{sort_id,jdbcType=INTEGER}, #{staff_id,jdbcType=INTEGER}, #{create_date,jdbcType=DATE},
+        #{state_date,jdbcType=DATE}, #{state,jdbcType=CHAR}, #{remarks,jdbcType=VARCHAR}
+       )
+</insert>
+<insert id="insertSelective" parameterType="com.liuj.opencrm.lt.bean.BOcfgTask">
+insert into cfg_task
+<trim prefix="(" suffix=")" suffixOverrides=",">
+  <if test="cfg_task_id != null">
+    cfg_task_id,
+  </if>
+  <if test="task_name != null">
+    task_name,
+  </if>
+  <if test="cfg_task_type_code != null">
+    cfg_task_type_code,
+  </if>
+  <if test="business_class != null">
+    business_class,
+  </if>
+  <if test="task_method != null">
+    task_method,
+  </if>
+  <if test="task_expr != null">
+    task_expr,
+  </if>
+  <if test="sort_id != null">
+    sort_id,
+  </if>
+  <if test="staff_id != null">
+    staff_id,
+  </if>
+  <if test="create_date != null">
+    create_date,
+  </if>
+  <if test="state_date != null">
+    state_date,
+  </if>
+  <if test="state != null">
+    state,
+  </if>
+  <if test="remarks != null">
+    remarks,
+  </if>
+</trim>
+<trim prefix="values (" suffix=")" suffixOverrides=",">
+  <if test="cfg_task_id != null">
+    #{cfg_task_id,jdbcType=INTEGER},
+  </if>
+  <if test="task_name != null">
+    #{task_name,jdbcType=VARCHAR},
+  </if>
+  <if test="cfg_task_type_code != null">
+    #{cfg_task_type_code,jdbcType=VARCHAR},
+  </if>
+  <if test="business_class != null">
+    #{business_class,jdbcType=VARCHAR},
+  </if>
+  <if test="task_method != null">
+    #{task_method,jdbcType=CHAR},
+  </if>
+  <if test="task_expr != null">
+    #{task_expr,jdbcType=VARCHAR},
+  </if>
+  <if test="sort_id != null">
+    #{sort_id,jdbcType=INTEGER},
+  </if>
+  <if test="staff_id != null">
+    #{staff_id,jdbcType=INTEGER},
+  </if>
+  <if test="create_date != null">
+    #{create_date,jdbcType=DATE},
+  </if>
+  <if test="state_date != null">
+    #{state_date,jdbcType=DATE},
+  </if>
+  <if test="state != null">
+    #{state,jdbcType=CHAR},
+  </if>
+  <if test="remarks != null">
+    #{remarks,jdbcType=VARCHAR},
+  </if>
+</trim>
+</insert>
+<update id="updateByPrimaryKeySelective" parameterType="com.liuj.opencrm.lt.bean.BOcfgTask">
+update cfg_task
+<set>
+  <if test="task_name != null">
+    task_name = #{task_name,jdbcType=VARCHAR},
+  </if>
+  <if test="cfg_task_type_code != null">
+    cfg_task_type_code = #{cfg_task_type_code,jdbcType=VARCHAR},
+  </if>
+  <if test="business_class != null">
+    business_class = #{business_class,jdbcType=VARCHAR},
+  </if>
+  <if test="task_method != null">
+    task_method = #{task_method,jdbcType=CHAR},
+  </if>
+  <if test="task_expr != null">
+    task_expr = #{task_expr,jdbcType=VARCHAR},
+  </if>
+  <if test="sort_id != null">
+    sort_id = #{sort_id,jdbcType=INTEGER},
+  </if>
+  <if test="staff_id != null">
+    staff_id = #{staff_id,jdbcType=INTEGER},
+  </if>
+  <if test="create_date != null">
+    create_date = #{create_date,jdbcType=DATE},
+  </if>
+  <if test="state_date != null">
+    state_date = #{state_date,jdbcType=DATE},
+  </if>
+  <if test="state != null">
+    state = #{state,jdbcType=CHAR},
+  </if>
+  <if test="remarks != null">
+    remarks = #{remarks,jdbcType=VARCHAR},
+  </if>
+</set>
+where cfg_task_id = #{cfg_task_id,jdbcType=INTEGER}
+</update>
+<update id="updateByPrimaryKey" parameterType="com.liuj.opencrm.lt.bean.BOcfgTask">
+update cfg_task
+set task_name = #{task_name,jdbcType=VARCHAR},
+    cfg_task_type_code = #{cfg_task_type_code,jdbcType=VARCHAR},
+    business_class = #{business_class,jdbcType=VARCHAR},
+    task_method = #{task_method,jdbcType=CHAR},
+    task_expr = #{task_expr,jdbcType=VARCHAR},
+    sort_id = #{sort_id,jdbcType=INTEGER},
+    staff_id = #{staff_id,jdbcType=INTEGER},
+    create_date = #{create_date,jdbcType=DATE},
+    state_date = #{state_date,jdbcType=DATE},
+    state = #{state,jdbcType=CHAR},
+    remarks = #{remarks,jdbcType=VARCHAR}
+where cfg_task_id = #{cfg_task_id,jdbcType=INTEGER}
+</update>
+<resultMap id="BaseResultMap" type="com.liuj.opencrm.lt.bean.BOcfgTask">
+<id column="cfg_task_id" jdbcType="INTEGER" property="cfg_task_id" />
+<result column="task_name" jdbcType="VARCHAR" property="task_name" />
+<result column="cfg_task_type_code" jdbcType="VARCHAR" property="cfg_task_type_code" />
+<result column="business_class" jdbcType="VARCHAR" property="business_class" />
+<result column="task_method" jdbcType="CHAR" property="task_method" />
+<result column="task_expr" jdbcType="VARCHAR" property="task_expr" />
+<result column="sort_id" jdbcType="INTEGER" property="sort_id" />
+<result column="staff_id" jdbcType="INTEGER" property="staff_id" />
+<result column="create_date" jdbcType="DATE" property="create_date" />
+<result column="state_date" jdbcType="DATE" property="state_date" />
+<result column="state" jdbcType="CHAR" property="state" />
+<result column="remarks" jdbcType="VARCHAR" property="remarks" />
+</resultMap>
+<sql id="Base_Column_List">
+cfg_task_id, task_name, cfg_task_type_code, business_class, task_method, task_expr,
+    sort_id, staff_id, create_date, state_date, state, remarks
+</sql>
+<select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+select
+<include refid="Base_Column_List" />
+from cfg_task
+where cfg_task_id = #{cfg_task_id,jdbcType=INTEGER}
+</select>
+<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+delete from cfg_task
+where cfg_task_id = #{cfg_task_id,jdbcType=INTEGER}
+</delete>
+<insert id="insert" parameterType="com.liuj.opencrm.lt.bean.BOcfgTask">
+insert into cfg_task (cfg_task_id, task_name, cfg_task_type_code,
+                      business_class, task_method, task_expr,
+                      sort_id, staff_id, create_date,
+                      state_date, state, remarks
+)
+values (#{cfg_task_id,jdbcType=INTEGER}, #{task_name,jdbcType=VARCHAR}, #{cfg_task_type_code,jdbcType=VARCHAR},
+        #{business_class,jdbcType=VARCHAR}, #{task_method,jdbcType=CHAR}, #{task_expr,jdbcType=VARCHAR},
+        #{sort_id,jdbcType=INTEGER}, #{staff_id,jdbcType=INTEGER}, #{create_date,jdbcType=DATE},
+        #{state_date,jdbcType=DATE}, #{state,jdbcType=CHAR}, #{remarks,jdbcType=VARCHAR}
+       )
+</insert>
+<insert id="insertSelective" parameterType="com.liuj.opencrm.lt.bean.BOcfgTask">
+insert into cfg_task
+<trim prefix="(" suffix=")" suffixOverrides=",">
+  <if test="cfg_task_id != null">
+    cfg_task_id,
+  </if>
+  <if test="task_name != null">
+    task_name,
+  </if>
+  <if test="cfg_task_type_code != null">
+    cfg_task_type_code,
+  </if>
+  <if test="business_class != null">
+    business_class,
+  </if>
+  <if test="task_method != null">
+    task_method,
+  </if>
+  <if test="task_expr != null">
+    task_expr,
+  </if>
+  <if test="sort_id != null">
+    sort_id,
+  </if>
+  <if test="staff_id != null">
+    staff_id,
+  </if>
+  <if test="create_date != null">
+    create_date,
+  </if>
+  <if test="state_date != null">
+    state_date,
+  </if>
+  <if test="state != null">
+    state,
+  </if>
+  <if test="remarks != null">
+    remarks,
+  </if>
+</trim>
+<trim prefix="values (" suffix=")" suffixOverrides=",">
+  <if test="cfg_task_id != null">
+    #{cfg_task_id,jdbcType=INTEGER},
+  </if>
+  <if test="task_name != null">
+    #{task_name,jdbcType=VARCHAR},
+  </if>
+  <if test="cfg_task_type_code != null">
+    #{cfg_task_type_code,jdbcType=VARCHAR},
+  </if>
+  <if test="business_class != null">
+    #{business_class,jdbcType=VARCHAR},
+  </if>
+  <if test="task_method != null">
+    #{task_method,jdbcType=CHAR},
+  </if>
+  <if test="task_expr != null">
+    #{task_expr,jdbcType=VARCHAR},
+  </if>
+  <if test="sort_id != null">
+    #{sort_id,jdbcType=INTEGER},
+  </if>
+  <if test="staff_id != null">
+    #{staff_id,jdbcType=INTEGER},
+  </if>
+  <if test="create_date != null">
+    #{create_date,jdbcType=DATE},
+  </if>
+  <if test="state_date != null">
+    #{state_date,jdbcType=DATE},
+  </if>
+  <if test="state != null">
+    #{state,jdbcType=CHAR},
+  </if>
+  <if test="remarks != null">
+    #{remarks,jdbcType=VARCHAR},
+  </if>
+</trim>
+</insert>
+<update id="updateByPrimaryKeySelective" parameterType="com.liuj.opencrm.lt.bean.BOcfgTask">
+update cfg_task
+<set>
+  <if test="task_name != null">
+    task_name = #{task_name,jdbcType=VARCHAR},
+  </if>
+  <if test="cfg_task_type_code != null">
+    cfg_task_type_code = #{cfg_task_type_code,jdbcType=VARCHAR},
+  </if>
+  <if test="business_class != null">
+    business_class = #{business_class,jdbcType=VARCHAR},
+  </if>
+  <if test="task_method != null">
+    task_method = #{task_method,jdbcType=CHAR},
+  </if>
+  <if test="task_expr != null">
+    task_expr = #{task_expr,jdbcType=VARCHAR},
+  </if>
+  <if test="sort_id != null">
+    sort_id = #{sort_id,jdbcType=INTEGER},
+  </if>
+  <if test="staff_id != null">
+    staff_id = #{staff_id,jdbcType=INTEGER},
+  </if>
+  <if test="create_date != null">
+    create_date = #{create_date,jdbcType=DATE},
+  </if>
+  <if test="state_date != null">
+    state_date = #{state_date,jdbcType=DATE},
+  </if>
+  <if test="state != null">
+    state = #{state,jdbcType=CHAR},
+  </if>
+  <if test="remarks != null">
+    remarks = #{remarks,jdbcType=VARCHAR},
+  </if>
+</set>
+where cfg_task_id = #{cfg_task_id,jdbcType=INTEGER}
+</update>
+<update id="updateByPrimaryKey" parameterType="com.liuj.opencrm.lt.bean.BOcfgTask">
+update cfg_task
+set task_name = #{task_name,jdbcType=VARCHAR},
+    cfg_task_type_code = #{cfg_task_type_code,jdbcType=VARCHAR},
+    business_class = #{business_class,jdbcType=VARCHAR},
+    task_method = #{task_method,jdbcType=CHAR},
+    task_expr = #{task_expr,jdbcType=VARCHAR},
+    sort_id = #{sort_id,jdbcType=INTEGER},
+    staff_id = #{staff_id,jdbcType=INTEGER},
+    create_date = #{create_date,jdbcType=DATE},
+    state_date = #{state_date,jdbcType=DATE},
+    state = #{state,jdbcType=CHAR},
+    remarks = #{remarks,jdbcType=VARCHAR}
+where cfg_task_id = #{cfg_task_id,jdbcType=INTEGER}
+</update>
+</mapper>

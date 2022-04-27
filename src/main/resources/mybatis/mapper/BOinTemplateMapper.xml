@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liuj.opencrm.lt.dao.BOinTemplateMapper">
+  <resultMap id="BaseResultMap" type="com.liuj.opencrm.lt.bean.BOinTemplate">
+    <result column="row_id" jdbcType="INTEGER" property="row_id" />
+    <result column="tpl_id" jdbcType="INTEGER" property="tpl_id" />
+    <result column="tpl_name" jdbcType="VARCHAR" property="tpl_name" />
+    <result column="tpl_type" jdbcType="INTEGER" property="tpl_type" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="org_id" jdbcType="INTEGER" property="org_id" />
+    <result column="op_id" jdbcType="INTEGER" property="op_id" />
+    <result column="done_date" jdbcType="DATE" property="done_date" />
+    <result column="done_code" jdbcType="VARCHAR" property="done_code" />
+    <result column="version" jdbcType="VARCHAR" property="version" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.liuj.opencrm.lt.bean.BOinTemplate">
+    <result column="tpl_content" jdbcType="LONGVARCHAR" property="tpl_content" />
+  </resultMap>
+  <sql id="Blob_Column_List">
+    tpl_content
+  </sql>
+  <insert id="insert" parameterType="com.liuj.opencrm.lt.bean.BOinTemplate">
+    insert into in_template (row_id, tpl_id, tpl_name, 
+      tpl_type, state, org_id, 
+      op_id, done_date, done_code, 
+      version, remark, tpl_content
+      )
+    values (#{row_id,jdbcType=INTEGER}, #{tpl_id,jdbcType=INTEGER}, #{tpl_name,jdbcType=VARCHAR}, 
+      #{tpl_type,jdbcType=INTEGER}, #{state,jdbcType=INTEGER}, #{org_id,jdbcType=INTEGER}, 
+      #{op_id,jdbcType=INTEGER}, #{done_date,jdbcType=DATE}, #{done_code,jdbcType=VARCHAR}, 
+      #{version,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{tpl_content,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.liuj.opencrm.lt.bean.BOinTemplate">
+    insert into in_template
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="row_id != null">
+        row_id,
+      </if>
+      <if test="tpl_id != null">
+        tpl_id,
+      </if>
+      <if test="tpl_name != null">
+        tpl_name,
+      </if>
+      <if test="tpl_type != null">
+        tpl_type,
+      </if>
+      <if test="state != null">
+        state,
+      </if>
+      <if test="org_id != null">
+        org_id,
+      </if>
+      <if test="op_id != null">
+        op_id,
+      </if>
+      <if test="done_date != null">
+        done_date,
+      </if>
+      <if test="done_code != null">
+        done_code,
+      </if>
+      <if test="version != null">
+        version,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="tpl_content != null">
+        tpl_content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="row_id != null">
+        #{row_id,jdbcType=INTEGER},
+      </if>
+      <if test="tpl_id != null">
+        #{tpl_id,jdbcType=INTEGER},
+      </if>
+      <if test="tpl_name != null">
+        #{tpl_name,jdbcType=VARCHAR},
+      </if>
+      <if test="tpl_type != null">
+        #{tpl_type,jdbcType=INTEGER},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=INTEGER},
+      </if>
+      <if test="org_id != null">
+        #{org_id,jdbcType=INTEGER},
+      </if>
+      <if test="op_id != null">
+        #{op_id,jdbcType=INTEGER},
+      </if>
+      <if test="done_date != null">
+        #{done_date,jdbcType=DATE},
+      </if>
+      <if test="done_code != null">
+        #{done_code,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="tpl_content != null">
+        #{tpl_content,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

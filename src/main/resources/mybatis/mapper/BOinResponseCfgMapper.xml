@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liuj.opencrm.lt.dao.BOinResponseCfgMapper">
+  <resultMap id="BaseResultMap" type="com.liuj.opencrm.lt.bean.BOinResponseCfg">
+    <id column="busi_id" jdbcType="INTEGER" property="busi_id" />
+    <result column="row_id" jdbcType="INTEGER" property="row_id" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="method" jdbcType="VARCHAR" property="method" />
+    <result column="response_class" jdbcType="VARCHAR" property="response_class" />
+    <result column="bind_class" jdbcType="VARCHAR" property="bind_class" />
+    <result column="template_id" jdbcType="INTEGER" property="template_id" />
+    <result column="src" jdbcType="VARCHAR" property="src" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="ext1" jdbcType="VARCHAR" property="ext1" />
+    <result column="ext2" jdbcType="VARCHAR" property="ext2" />
+    <result column="ext3" jdbcType="VARCHAR" property="ext3" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    busi_id, row_id, url, method, response_class, bind_class, template_id, src, state, 
+    remark, ext1, ext2, ext3
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from in_response_cfg
+    where busi_id = #{busi_id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from in_response_cfg
+    where busi_id = #{busi_id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.liuj.opencrm.lt.bean.BOinResponseCfg">
+    insert into in_response_cfg (busi_id, row_id, url, 
+      method, response_class, bind_class, 
+      template_id, src, state, 
+      remark, ext1, ext2, 
+      ext3)
+    values (#{busi_id,jdbcType=INTEGER}, #{row_id,jdbcType=INTEGER}, #{url,jdbcType=VARCHAR}, 
+      #{method,jdbcType=VARCHAR}, #{response_class,jdbcType=VARCHAR}, #{bind_class,jdbcType=VARCHAR}, 
+      #{template_id,jdbcType=INTEGER}, #{src,jdbcType=VARCHAR}, #{state,jdbcType=INTEGER}, 
+      #{remark,jdbcType=VARCHAR}, #{ext1,jdbcType=VARCHAR}, #{ext2,jdbcType=VARCHAR}, 
+      #{ext3,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.liuj.opencrm.lt.bean.BOinResponseCfg">
+    insert into in_response_cfg
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="busi_id != null">
+        busi_id,
+      </if>
+      <if test="row_id != null">
+        row_id,
+      </if>
+      <if test="url != null">
+        url,
+      </if>
+      <if test="method != null">
+        method,
+      </if>
+      <if test="response_class != null">
+        response_class,
+      </if>
+      <if test="bind_class != null">
+        bind_class,
+      </if>
+      <if test="template_id != null">
+        template_id,
+      </if>
+      <if test="src != null">
+        src,
+      </if>
+      <if test="state != null">
+        state,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="ext1 != null">
+        ext1,
+      </if>
+      <if test="ext2 != null">
+        ext2,
+      </if>
+      <if test="ext3 != null">
+        ext3,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="busi_id != null">
+        #{busi_id,jdbcType=INTEGER},
+      </if>
+      <if test="row_id != null">
+        #{row_id,jdbcType=INTEGER},
+      </if>
+      <if test="url != null">
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="method != null">
+        #{method,jdbcType=VARCHAR},
+      </if>
+      <if test="response_class != null">
+        #{response_class,jdbcType=VARCHAR},
+      </if>
+      <if test="bind_class != null">
+        #{bind_class,jdbcType=VARCHAR},
+      </if>
+      <if test="template_id != null">
+        #{template_id,jdbcType=INTEGER},
+      </if>
+      <if test="src != null">
+        #{src,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="ext1 != null">
+        #{ext1,jdbcType=VARCHAR},
+      </if>
+      <if test="ext2 != null">
+        #{ext2,jdbcType=VARCHAR},
+      </if>
+      <if test="ext3 != null">
+        #{ext3,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.liuj.opencrm.lt.bean.BOinResponseCfg">
+    update in_response_cfg
+    <set>
+      <if test="row_id != null">
+        row_id = #{row_id,jdbcType=INTEGER},
+      </if>
+      <if test="url != null">
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="method != null">
+        method = #{method,jdbcType=VARCHAR},
+      </if>
+      <if test="response_class != null">
+        response_class = #{response_class,jdbcType=VARCHAR},
+      </if>
+      <if test="bind_class != null">
+        bind_class = #{bind_class,jdbcType=VARCHAR},
+      </if>
+      <if test="template_id != null">
+        template_id = #{template_id,jdbcType=INTEGER},
+      </if>
+      <if test="src != null">
+        src = #{src,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        state = #{state,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="ext1 != null">
+        ext1 = #{ext1,jdbcType=VARCHAR},
+      </if>
+      <if test="ext2 != null">
+        ext2 = #{ext2,jdbcType=VARCHAR},
+      </if>
+      <if test="ext3 != null">
+        ext3 = #{ext3,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where busi_id = #{busi_id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.liuj.opencrm.lt.bean.BOinResponseCfg">
+    update in_response_cfg
+    set row_id = #{row_id,jdbcType=INTEGER},
+      url = #{url,jdbcType=VARCHAR},
+      method = #{method,jdbcType=VARCHAR},
+      response_class = #{response_class,jdbcType=VARCHAR},
+      bind_class = #{bind_class,jdbcType=VARCHAR},
+      template_id = #{template_id,jdbcType=INTEGER},
+      src = #{src,jdbcType=VARCHAR},
+      state = #{state,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      ext1 = #{ext1,jdbcType=VARCHAR},
+      ext2 = #{ext2,jdbcType=VARCHAR},
+      ext3 = #{ext3,jdbcType=VARCHAR}
+    where busi_id = #{busi_id,jdbcType=INTEGER}
+  </update>
+</mapper>

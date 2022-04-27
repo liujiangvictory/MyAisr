@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liuj.opencrm.lt.dao.BOinBusiCfgMapper">
+  <resultMap id="BaseResultMap" type="com.liuj.opencrm.lt.bean.BOinBusiCfg">
+    <id column="busi_id" jdbcType="INTEGER" property="busi_id" />
+    <result column="busi_name" jdbcType="VARCHAR" property="busi_name" />
+    <result column="method" jdbcType="VARCHAR" property="method" />
+    <result column="sys_code" jdbcType="VARCHAR" property="sys_code" />
+    <result column="webservice_method" jdbcType="VARCHAR" property="webservice_method" />
+    <result column="reply_type" jdbcType="VARCHAR" property="reply_type" />
+    <result column="protocol_type" jdbcType="INTEGER" property="protocol_type" />
+    <result column="max_retry_times" jdbcType="INTEGER" property="max_retry_times" />
+    <result column="delay_time" jdbcType="INTEGER" property="delay_time" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    busi_id, busi_name, method, sys_code, webservice_method, reply_type, protocol_type, 
+    max_retry_times, delay_time, remark
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from in_busi_cfg
+    where busi_id = #{busi_id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from in_busi_cfg
+    where busi_id = #{busi_id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.liuj.opencrm.lt.bean.BOinBusiCfg">
+    insert into in_busi_cfg (busi_id, busi_name, method, 
+      sys_code, webservice_method, reply_type, 
+      protocol_type, max_retry_times, delay_time, 
+      remark)
+    values (#{busi_id,jdbcType=INTEGER}, #{busi_name,jdbcType=VARCHAR}, #{method,jdbcType=VARCHAR}, 
+      #{sys_code,jdbcType=VARCHAR}, #{webservice_method,jdbcType=VARCHAR}, #{reply_type,jdbcType=VARCHAR}, 
+      #{protocol_type,jdbcType=INTEGER}, #{max_retry_times,jdbcType=INTEGER}, #{delay_time,jdbcType=INTEGER}, 
+      #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.liuj.opencrm.lt.bean.BOinBusiCfg">
+    insert into in_busi_cfg
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="busi_id != null">
+        busi_id,
+      </if>
+      <if test="busi_name != null">
+        busi_name,
+      </if>
+      <if test="method != null">
+        method,
+      </if>
+      <if test="sys_code != null">
+        sys_code,
+      </if>
+      <if test="webservice_method != null">
+        webservice_method,
+      </if>
+      <if test="reply_type != null">
+        reply_type,
+      </if>
+      <if test="protocol_type != null">
+        protocol_type,
+      </if>
+      <if test="max_retry_times != null">
+        max_retry_times,
+      </if>
+      <if test="delay_time != null">
+        delay_time,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="busi_id != null">
+        #{busi_id,jdbcType=INTEGER},
+      </if>
+      <if test="busi_name != null">
+        #{busi_name,jdbcType=VARCHAR},
+      </if>
+      <if test="method != null">
+        #{method,jdbcType=VARCHAR},
+      </if>
+      <if test="sys_code != null">
+        #{sys_code,jdbcType=VARCHAR},
+      </if>
+      <if test="webservice_method != null">
+        #{webservice_method,jdbcType=VARCHAR},
+      </if>
+      <if test="reply_type != null">
+        #{reply_type,jdbcType=VARCHAR},
+      </if>
+      <if test="protocol_type != null">
+        #{protocol_type,jdbcType=INTEGER},
+      </if>
+      <if test="max_retry_times != null">
+        #{max_retry_times,jdbcType=INTEGER},
+      </if>
+      <if test="delay_time != null">
+        #{delay_time,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.liuj.opencrm.lt.bean.BOinBusiCfg">
+    update in_busi_cfg
+    <set>
+      <if test="busi_name != null">
+        busi_name = #{busi_name,jdbcType=VARCHAR},
+      </if>
+      <if test="method != null">
+        method = #{method,jdbcType=VARCHAR},
+      </if>
+      <if test="sys_code != null">
+        sys_code = #{sys_code,jdbcType=VARCHAR},
+      </if>
+      <if test="webservice_method != null">
+        webservice_method = #{webservice_method,jdbcType=VARCHAR},
+      </if>
+      <if test="reply_type != null">
+        reply_type = #{reply_type,jdbcType=VARCHAR},
+      </if>
+      <if test="protocol_type != null">
+        protocol_type = #{protocol_type,jdbcType=INTEGER},
+      </if>
+      <if test="max_retry_times != null">
+        max_retry_times = #{max_retry_times,jdbcType=INTEGER},
+      </if>
+      <if test="delay_time != null">
+        delay_time = #{delay_time,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where busi_id = #{busi_id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.liuj.opencrm.lt.bean.BOinBusiCfg">
+    update in_busi_cfg
+    set busi_name = #{busi_name,jdbcType=VARCHAR},
+      method = #{method,jdbcType=VARCHAR},
+      sys_code = #{sys_code,jdbcType=VARCHAR},
+      webservice_method = #{webservice_method,jdbcType=VARCHAR},
+      reply_type = #{reply_type,jdbcType=VARCHAR},
+      protocol_type = #{protocol_type,jdbcType=INTEGER},
+      max_retry_times = #{max_retry_times,jdbcType=INTEGER},
+      delay_time = #{delay_time,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR}
+    where busi_id = #{busi_id,jdbcType=INTEGER}
+  </update>
+</mapper>

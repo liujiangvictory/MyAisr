@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<!-- 配置生成器 -->
+<generatorConfiguration>
+    <!--数据库驱动包路径 -->
+    <classPathEntry
+            location="E:\maven\apache-maven-3.5.3-bin\MyRepository\mysql\mysql-connector-java\8.0.20\mysql-connector-java-8.0.20.jar"/>
+
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <!--关闭注释 -->
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <!--数据库连接信息 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/crmkf?serverTimezone=UTC"
+                        userId="root" password="123456">
+        </jdbcConnection>
+
+        <!--生成的bean 包路径 -->
+        <javaModelGenerator targetPackage="com.liuj.opencrm.lt.bean" targetProject="src/main/java">
+            <property name="enableSubPackages" value="ture"/>
+            <property name="trimStrings" value="false"/>
+        </javaModelGenerator>
+
+        <!--生成xml mapper文件 路径 -->
+        <sqlMapGenerator targetPackage="mybatis.mapper" targetProject="src/main/resources/">
+            <property name="enableSubPackages" value="ture"/>
+        </sqlMapGenerator>
+
+        <!-- 生成的Dao接口 的包路径 -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.liuj.opencrm.lt.dao" targetProject="src/main/java">
+            <property name="enableSubPackages" value="ture"/>
+        </javaClientGenerator>
+        <!--对应数据库表名 tableName数据库表名称，domainObjectName生成model类的名称 -->
+        <table tableName="cfg_task" domainObjectName="BOcfgTask" enableCountByExample="false"
+               enableSelectByExample="false" enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table tableName="cfg_task_param_value" domainObjectName="BOcfgTaskParamValue" enableCountByExample="false"
+               enableSelectByExample="false" enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table tableName="in_busi_cfg" domainObjectName="BOinBusiCfg" enableCountByExample="false"
+               enableSelectByExample="false" enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table tableName="in_request_cfg" domainObjectName="BOrinRequestCfg" enableCountByExample="false"
+               enableSelectByExample="false" enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table tableName="in_response_cfg" domainObjectName="BOinResponseCfg" enableCountByExample="false"
+               enableSelectByExample="false" enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table tableName="in_template" domainObjectName="BOinTemplate" enableCountByExample="false"
+               enableSelectByExample="false" enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table tableName="in_out_param_mapping" domainObjectName="BOinOutParamMapping" enableCountByExample="false"
+               enableSelectByExample="false" enableUpdateByExample="false" enableDeleteByExample="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+    </context>
+</generatorConfiguration>
