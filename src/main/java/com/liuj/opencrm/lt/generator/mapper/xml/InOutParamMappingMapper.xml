@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liuj.opencrm.lt.generator.mapper.InOutParamMappingMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.liuj.opencrm.lt.generator.entity.InOutParamMapping">
+        <result column="row_id" property="rowId" />
+        <result column="busi_id" property="busiId" />
+        <result column="sys_code" property="sysCode" />
+        <result column="property" property="property" />
+        <result column="prarm_source" property="prarmSource" />
+        <result column="out_property" property="outProperty" />
+        <result column="supe_out_property" property="supeOutProperty" />
+        <result column="out_property_type" property="outPropertyType" />
+        <result column="default_value" property="defaultValue" />
+        <result column="order_no" property="orderNo" />
+        <result column="convert_class" property="convertClass" />
+        <result column="format_mask" property="formatMask" />
+        <result column="state" property="state" />
+        <result column="service_name" property="serviceName" />
+    </resultMap>
+
+</mapper>

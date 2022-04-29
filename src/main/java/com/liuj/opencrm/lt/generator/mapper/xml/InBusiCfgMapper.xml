@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liuj.opencrm.lt.generator.mapper.InBusiCfgMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.liuj.opencrm.lt.generator.entity.InBusiCfg">
+        <id column="busi_id" property="busiId" />
+        <result column="busi_name" property="busiName" />
+        <result column="method" property="method" />
+        <result column="sys_code" property="sysCode" />
+        <result column="webservice_method" property="webserviceMethod" />
+        <result column="reply_type" property="replyType" />
+        <result column="protocol_type" property="protocolType" />
+        <result column="max_retry_times" property="maxRetryTimes" />
+        <result column="delay_time" property="delayTime" />
+        <result column="remark" property="remark" />
+    </resultMap>
+
+</mapper>

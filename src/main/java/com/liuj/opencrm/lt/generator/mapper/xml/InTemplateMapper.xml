@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liuj.opencrm.lt.generator.mapper.InTemplateMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.liuj.opencrm.lt.generator.entity.InTemplate">
+        <result column="row_id" property="rowId" />
+        <result column="tpl_id" property="tplId" />
+        <result column="tpl_name" property="tplName" />
+        <result column="tpl_content" property="tplContent" />
+        <result column="tpl_type" property="tplType" />
+        <result column="state" property="state" />
+        <result column="org_id" property="orgId" />
+        <result column="op_id" property="opId" />
+        <result column="done_date" property="doneDate" />
+        <result column="done_code" property="doneCode" />
+        <result column="version" property="version" />
+        <result column="remark" property="remark" />
+    </resultMap>
+
+</mapper>
