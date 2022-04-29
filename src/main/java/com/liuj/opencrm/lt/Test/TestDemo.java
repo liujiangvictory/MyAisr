@@ -27,6 +27,4 @@ public class TestDemo {
         List<CfgTask> cfgTasks = cfgTaskMapper.selectList(null);
         cfgTasks.forEach(System.out::println);
     }
-
-
 }
